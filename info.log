@@ -24,3 +24,7 @@
 {"message":"A Numberical Rating Between 0 and 5 is Required","level":"error"}
 {"message":"Bookmark with id 2f936cf3-c389-45a4-9528-07061e6849ca created","level":"info"}
 {"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/2","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/2","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/2","level":"error"}
