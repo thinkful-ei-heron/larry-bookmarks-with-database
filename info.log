@@ -1,0 +1,25 @@
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Bookmark with id 1 not found.","level":"error"}
+{"message":"A Bookmark is Required","level":"error"}
+{"message":"A Bookmark is Required","level":"error"}
+{"message":"A Bookmark is Required","level":"error"}
+{"message":"A Bookmark is Required","level":"error"}
+{"message":"Bookmark with id 97c2b981-78d0-4041-a131-f0caf3bad3c5 created","level":"info"}
+{"message":"Bookmark with id f089dbe5-7f09-4c03-aa2f-b7611c010b04 created","level":"info"}
+{"message":"Bookmark with id 84b1fcf1-139e-4ed9-9542-8b77377bc9a1 created","level":"info"}
+{"message":"Bookmark with id 562d97a7-0b49-4d6a-9eeb-238e2096f53f created","level":"info"}
+{"message":"Bookmark with id 675da3a0-f05b-44f6-9ade-121362d379c7 created","level":"info"}
+{"message":"Bookmark with id 16938b16-dc8a-4b68-8f40-7eb096eb193e created","level":"info"}
+{"message":"A Valid URL is Required","level":"error"}
+{"message":"Bookmark with id df256825-2d99-4481-9727-638e851cac85 created","level":"info"}
+{"message":"Bookmark with id 17091e22-4eb5-4af7-8a06-af6caaad8a1d created","level":"info"}
+{"message":"Bookmark with id 1162c600-438f-4b20-ad54-e0bd6f4b80b8 created","level":"info"}
+{"message":"Bookmark with id 1162c600-438f-4b20-ad54-e0bd6f4b80b8 not found.","level":"error"}
+{"message":"Bookmark with id f48cd6fc-4415-4f80-9841-6c38222280cb created","level":"info"}
+{"message":"Bookmark with id f48cd6fc-4415-4f80-9841-6c38222280cb deleted.","level":"info"}
+{"message":"Bookmark with id f48cd6fc-4415-4f80-9841-6c38222280cb not found.","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"A Numberical Rating Between 0 and 5 is Required","level":"error"}
+{"message":"A Numberical Rating Between 0 and 5 is Required","level":"error"}
+{"message":"Bookmark with id 2f936cf3-c389-45a4-9528-07061e6849ca created","level":"info"}
