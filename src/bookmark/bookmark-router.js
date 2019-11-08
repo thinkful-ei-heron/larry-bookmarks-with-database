@@ -92,10 +92,15 @@ bookmarkRouter
           logger.error(`Bookmark with id ${req.params.id} not found.`);
           return res
             .status(404)
-            .send('404 Not Found');
+            .send({
+              "error": {
+                "message": "Bookmark doesn't exist"
+              }
+            });
         }
         res.json(bookmark);
       })
+      .catch(next);
   })
   .delete((req, res) => {
     const { id } = req.params;
