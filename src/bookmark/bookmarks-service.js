@@ -7,21 +7,21 @@ const BookmarksService = {
   getById(knex, id) {
     return knex.from('bookmarks').select('*').where('id', id).first();
   },
-/*  insertArticle(knex, newArticle) {
+  insertBookmark(knex, newBookmark) {
     return knex
-      .insert(newArticle)
-      .into('blogful_articles')
+      .insert(newBookmark)
+      .into('bookmarks')
       .returning('*')
       .then(rows => {
         return rows[0];
       });
   },
-  deleteArticle(knex, id) {
-    return knex('blogful_articles')
+  deleteBookmark(knex, id) {
+    return knex('bookmarks')
       .where({ id })
       .delete()
   },
-  updateArticle(knex, id, newArticleFields) {
+  /*updateArticle(knex, id, newArticleFields) {
     return knex('blogful_articles')
       .where({ id })
       .update(newArticleFields)
