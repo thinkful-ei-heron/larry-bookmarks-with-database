@@ -3,6 +3,7 @@ const validator = require('validator');
 const logger = require('../logger');
 const xss = require('xss');
 const BookmarksService = require('./bookmarks-service');
+const { getBookmarkValidationError } = require('./bookmark-validator');
 
 const bookmarkRouter = express.Router();
 const bodyParser = express.json();
@@ -16,7 +17,7 @@ const serializeBookmark = bookmark => ({
 })
 
 bookmarkRouter
-  .route('/bookmarks')
+  .route('/')
   .get((req, res, next) => {
     const knexInstance = req.app.get('db');
     BookmarksService.getAllBookmarks(knexInstance)
@@ -35,7 +36,7 @@ bookmarkRouter
       }
     }
 
-    const { title, rating, url, desc } = req.body;
+    const { title, rating, url, description } = req.body;
 
     if (rating) {
       let num = parseInt(rating);
@@ -74,7 +75,7 @@ bookmarkRouter
    })
 
 bookmarkRouter
-  .route('/bookmarks/:id')
+  .route('/:id')
   .all((req, res, next) => {
     const { id } = req.params;
     const knexInstance = req.app.get('db');
@@ -109,6 +110,35 @@ bookmarkRouter
         .end()
       })
       .catch(next)
+  })
+  .patch(bodyParser, (req, res, next) => {
+    const { title, url, description, rating } = req.body
+    const bookmarkToUpdate = { title, url, description, rating }
+
+    const numberOfValues = Object.values(bookmarkToUpdate).filter(Boolean).length
+    if (numberOfValues === 0) {
+      logger.error(`Invalid update without required fields`)
+      return res.status(400).json({
+        error: {
+          message: `Request body must content either 'title', 'url', 'description' or 'rating'`
+        }
+      })
+    }
+
+    const error = getBookmarkValidationError(bookmarkToUpdate);
+
+    if (error) return res.status(400).send(error);
+
+    BookmarksService.updateBookmark(
+      req.app.get('db'),
+      req.params.id,
+      bookmarkToUpdate
+    )
+      .then(numRowsAffected => {
+        res.status(204).end()
+      })
+      .catch(next)
   });
+
 
 module.exports = bookmarkRouter
